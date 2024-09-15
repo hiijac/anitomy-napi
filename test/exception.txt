@@ -1,0 +1,199 @@
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+
+KEY_VALUES_STRING: 1
+
+    Key  : AV.Dereference
+    Value: NullPtr
+
+    Key  : AV.Fault
+    Value: Write
+
+    Key  : Analysis.CPU.mSec
+    Value: 1374
+
+    Key  : Analysis.Elapsed.mSec
+    Value: 1947
+
+    Key  : Analysis.IO.Other.Mb
+    Value: 0
+
+    Key  : Analysis.IO.Read.Mb
+    Value: 1
+
+    Key  : Analysis.IO.Write.Mb
+    Value: 0
+
+    Key  : Analysis.Init.CPU.mSec
+    Value: 702
+
+    Key  : Analysis.Init.Elapsed.mSec
+    Value: 27417
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 103
+
+    Key  : Failure.Bucket
+    Value: NULL_POINTER_WRITE_c0000005_anitomy_napi.node!std::_Construct_in_place_anitomy::Element,enum_anitomy::ElementKind__,std::basic_string_char,std::char_traits_char_,std::allocator_char___,unsigned___int64
+
+    Key  : Failure.Hash
+    Value: {190cb5ff-fd73-8bf1-3696-6f174b0dd988}
+
+    Key  : Timeline.OS.Boot.DeltaSec
+    Value: 2148318
+
+    Key  : Timeline.Process.Start.DeltaSec
+    Value: 180
+
+    Key  : WER.OS.Branch
+    Value: vb_release
+
+    Key  : WER.OS.Version
+    Value: 10.0.19041.1
+
+    Key  : WER.Process.Version
+    Value: 20.17.0.0
+
+
+FILE_IN_CAB:  node.dmp
+
+NTGLOBALFLAG:  0
+
+APPLICATION_VERIFIER_FLAGS:  0
+
+CONTEXT:  (.ecxr)
+rax=0000000000000000 rbx=0000000000000000 rcx=0000000000000002
+rdx=0000000000000000 rsi=00000089841fca78 rdi=00000089841fcf20
+rip=00007ff875a33d11 rsp=00000089841fac00 rbp=0000000000000000
+ r8=00000089841fad40  r9=000001c8710725c8 r10=00007ff875a00000
+r11=cdcdcdcdcdcdcdcd r12=000001c86f4fa690 r13=000001c86f4e8500
+r14=0000021e1dbd4938 r15=000001c86f4f66e0
+iopl=0         nv up ei pl zr na po nc
+cs=0033  ss=002b  ds=0000  es=0000  fs=0000  gs=0000             efl=00010246
+anitomy_napi!std::_Construct_in_place<anitomy::Element,enum anitomy::ElementKind &,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,unsigned __int64 &>+0x71:
+00007ff8`75a33d11 8908            mov     dword ptr [rax],ecx ds:00000000`00000000=????????
+Resetting default scope
+
+EXCEPTION_RECORD:  (.exr -1)
+ExceptionAddress: 00007ff875a33d11 (anitomy_napi!std::_Construct_in_place<anitomy::Element,enum anitomy::ElementKind &,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,unsigned __int64 &>+0x0000000000000071)
+   ExceptionCode: c0000005 (Access violation)
+  ExceptionFlags: 00000000
+NumberParameters: 2
+   Parameter[0]: 0000000000000001
+   Parameter[1]: 0000000000000000
+Attempt to write to address 0000000000000000
+
+PROCESS_NAME:  node.exe
+
+WRITE_ADDRESS:  0000000000000000 
+
+ERROR_CODE: (NTSTATUS) 0xc0000005 - Instrukcja w 0x%p odwo a a si  do pami ci pod adresem 0x%p. Pami   nie mo e by  %s.
+
+EXCEPTION_CODE_STR:  c0000005
+
+EXCEPTION_PARAMETER1:  0000000000000001
+
+EXCEPTION_PARAMETER2:  0000000000000000
+
+STACK_TEXT:  
+00000089`841fac00 00007ff8`75a3840d     : 00000000`00000000 00000089`841fae38 00000089`841fad40 000001c8`710725c8 : anitomy_napi!std::_Construct_in_place<anitomy::Element,enum anitomy::ElementKind &,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,unsigned __int64 &>+0x71
+00000089`841fac40 00007ff8`75a38c7d     : 00000089`841fd310 00000089`841fae38 00000089`841fad40 000001c8`710725c8 : anitomy_napi!std::vector<anitomy::Element,std::allocator<anitomy::Element> >::_Emplace_back_with_unused_capacity<enum anitomy::ElementKind &,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,unsigned __int64 &>+0x4d
+00000089`841fac90 00007ff8`75a65692     : 00000089`841fd310 00000089`841fae38 00000089`841fad40 000001c8`710725c8 : anitomy_napi!std::vector<anitomy::Element,std::allocator<anitomy::Element> >::_Emplace_one_at_back<enum anitomy::ElementKind &,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,unsigned __int64 &>+0x5d
+00000089`841face0 00007ff8`75a8d274     : 00000089`841fd310 00000089`841fae38 00000089`841fad40 000001c8`710725c8 : anitomy_napi!std::vector<anitomy::Element,std::allocator<anitomy::Element> >::emplace_back<enum anitomy::ElementKind &,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,unsigned __int64 &>+0x32
+00000089`841fad20 00007ff8`75ac7b29     : 00007ff8`75cf4110 00000089`00000002 000001c8`71072580 00000089`841fcf10 : anitomy_napi!`anitomy::detail::parse_episode'::`2'::<lambda_2>::operator()+0x1e4
+00000089`841fae30 00007ff8`75ac4c11     : 00000089`841fd540 00000089`841fd700 00000089`841fda90 00000000`00000020 : anitomy_napi!anitomy::detail::parse_episode+0x29d9
+00000089`841fd2d0 00007ff8`75ac5090     : 00000089`841fd810 00000089`841fda90 cccccccc`cccccccc cccccccc`cccccccc : anitomy_napi!anitomy::detail::Parser::parse+0x3f1
+00000089`841fd760 00007ff8`75ac45b9     : 00000089`841fd928 00000089`841fda80 00000089`841fda90 00000000`00000000 : anitomy_napi!anitomy::parse+0xb0
+00000089`841fd8a0 00007ff8`75a8bd15     : 000001c8`70ff9b80 00000089`841fdc18 00000089`841fdb30 00000000`00000000 : anitomy_napi!AniWrap::parse+0x189
+00000089`841fdb00 00007ff8`75a2e10f     : 00000089`841fdd30 00000089`841fdcc8 00000089`841fdeb0 00000089`841fdeb8 : anitomy_napi!`Napi::InstanceWrap<AniWrap>::InstanceMethodCallbackWrapper'::`2'::<lambda_1>::operator()+0x155
+00000089`841fdc90 00007ff8`75a90d30     : 00000089`841fdd30 00000089`841fdd60 00000089`841fdd68 00000089`841fdea8 : anitomy_napi!Napi::details::WrapCallback<`Napi::InstanceWrap<AniWrap>::InstanceMethodCallbackWrapper'::`2'::<lambda_1> >+0x2f
+00000089`841fdd00 00007ff7`325f322f     : 000001c8`6f4d95b0 00000089`841fdd80 000001c8`6f4fc580 00007ff7`32fd2b1f : anitomy_napi!Napi::InstanceWrap<AniWrap>::InstanceMethodCallbackWrapper+0x40
+00000089`841fdd60 00007ff6`d300d8c8     : 00000118`d26c1149 00000118`d26d3070 0000021e`1dbc0000 00000118`d26c1149 : node!v8::base::CPU::has_idiva+0xaf6f
+00000089`841fdde0 00007ff6`b3225574     : 00000096`d89d06e1 000001c8`6f4e8480 00000217`a36004e9 00000217`a36004e9 : 0x00007ff6`d300d8c8
+00000089`841fde40 00007ff7`3307ab51     : 00000217`a36004e9 00000217`ad644031 00000137`629011f9 00000000`00000001 : 0x00007ff6`b3225574
+00000089`841fdf38 00007ff7`3303da60     : 00000217`ad644031 000002d6`18a5ed91 00000000`0000002c 00000089`841fe0b0 : node!v8::PropertyDescriptor::writable+0x52321
+00000089`841fdf80 00007ff7`3303d65b     : 00000089`841ff268 00000000`00000000 00000000`00000000 00000089`841ff0b0 : node!v8::PropertyDescriptor::writable+0x15230
+00000089`841fdfa8 00007ff7`32ee7bd8     : 00000137`629011f9 00000000`00000105 00000000`00000000 000001c8`6f4e8690 : node!v8::PropertyDescriptor::writable+0x14e2b
+00000089`841fe0c0 00007ff7`32ee7d0b     : 000001c8`6f4e8480 00000000`00000000 000001c8`6f4f14b0 00000089`841fe270 : node!v8::StackTrace::GetFrameCount+0xf58
+00000089`841fe170 00007ff7`32ee896d     : 000001c8`6f4fa660 000001c8`6f4e8480 000001c8`6f4e8480 00000089`841fe650 : node!v8::StackTrace::GetFrameCount+0x108b
+00000089`841fe1d0 00007ff7`32c18072     : 000001c8`6f4fa668 000001c8`6f4fa668 00000000`00000000 00007ff7`32c4d83c : node!v8::StackTrace::GetFrameCount+0x1ced
+00000089`841fe2a0 00007ff7`32c1a852     : 000001c8`6f4e8690 00000000`00000000 000001c8`6f4fa5f8 000000e1`293cf6c9 : node!v8::base::Thread::StartSynchronously+0x63642
+00000089`841fe300 00007ff7`32c17990     : 0000021e`1dbe8349 000000e1`293cf6c9 000001c8`6f4fa5f8 00000089`841fe400 : node!v8::base::Thread::StartSynchronously+0x65e22
+00000089`841fe3c0 00007ff7`32c4d827     : 000001c8`6f4fa5f8 000001c8`70fe07c0 00000089`00000001 000001c8`6f4fa618 : node!v8::base::Thread::StartSynchronously+0x62f60
+00000089`841fe4b0 00007ff7`330051ad     : 000001c8`00000000 000001c8`6f4fa600 00000000`000000d0 000001c8`6f4e8480 : node!v8::base::Thread::StartSynchronously+0x98df7
+00000089`841fe4f0 00007ff7`325ea506     : 000001c8`6f4fa5f8 ffffffff`ffffffff 000000e1`00000006 000001c8`6f4e8480 : node!v8::Module::Evaluate+0x26d
+00000089`841fe5d0 00007ff7`32fd2c5e     : 000001ba`1ead8dc4 000001c8`6f4e8480 00000000`00000000 00000089`841feeb0 : node!v8::base::CPU::has_idiva+0x2246
+00000089`841fede0 00007ff7`32fd285a     : 000001c8`6f4e8480 000001c8`6f4e8480 00000089`841fef70 00000089`841ff0e0 : node!v8::SharedValueConveyor::SharedValueConveyor+0x65a0e
+00000089`841fee70 00007ff7`32fd2b1f     : 00000217`a36004e9 00000000`00000022 00000089`841ff0b8 00007ff7`33130817 : node!v8::SharedValueConveyor::SharedValueConveyor+0x6560a
+00000089`841fefc0 00007ff7`32fd2990     : 00007ff7`32fd2970 00000089`841ff0f0 000002d6`18a63b89 00000000`00000421 : node!v8::SharedValueConveyor::SharedValueConveyor+0x658cf
+00000089`841ff040 00007ff7`330cdffe     : 00000000`00000022 00000089`841ff0e8 00007ff7`3317e26c 00000000`00000006 : node!v8::SharedValueConveyor::SharedValueConveyor+0x65740
+00000089`841ff080 00007ff7`3303f6a0     : 00000217`a36004e9 000002d6`18a63931 00000007`00000000 00000217`a36005b9 : node!v8::PropertyDescriptor::writable+0xa57ce
+00000089`841ff0c0 00007ff7`33077b07     : 00000217`ad644189 00000089`841ff1c8 00007ff7`33130817 00000000`00000002 : node!v8::PropertyDescriptor::writable+0x16e70
+00000089`841ff188 00007ff7`331300b5     : 00000137`62901191 00000217`a36004e9 00000217`ad644281 00000217`a36004e9 : node!v8::PropertyDescriptor::writable+0x4f2d7
+00000089`841ff1c8 00007ff7`33067745     : 00000000`00000000 00000000`00000020 00000217`a36004e9 00000217`ad644281 : node!v8::PropertyDescriptor::writable+0x107885
+00000089`841ff200 00007ff7`3303d95b     : 00000000`00000000 00000000`00000000 00000000`00000002 00000000`00000000 : node!v8::PropertyDescriptor::writable+0x3ef15
+00000089`841ff268 00007ff7`32ee7bef     : 000001c8`6f4e8480 00000089`841ff5e0 00000000`00000000 000001c8`6f400000 : node!v8::PropertyDescriptor::writable+0x1512b
+00000089`841ff380 00007ff7`32ee7d0b     : 00000137`6293e861 00007ff7`32c5aece 000001c8`6f4f14c0 00000137`6293e861 : node!v8::StackTrace::GetFrameCount+0xf6f
+00000089`841ff430 00007ff7`32ee8afa     : 000001c8`6f4fa5d0 000001c8`6f4a1a60 00000089`841ff5e0 00000000`0000080f : node!v8::StackTrace::GetFrameCount+0x108b
+00000089`841ff490 00007ff7`32ebfcc2     : 000001c8`6f4e8690 000001c8`6f4e8480 00007ff7`366d6679 000001c8`6f4a1a60 : node!v8::StackTrace::GetFrameCount+0x1e7a
+00000089`841ff560 00007ff7`32ebfa0c     : 000001c8`6f4e8480 000001c8`6f468790 000001c8`70e91e00 00000089`841ff7c0 : node!v8::base::CPU::has_sse41+0x582
+00000089`841ff660 00007ff7`3266a852     : 00000089`841ff7c0 000001c8`70e91e00 000001c8`6f4e8401 00000000`00000000 : node!v8::base::CPU::has_sse41+0x2cc
+00000089`841ff690 00007ff7`3266a71e     : 000001c8`70ff3770 000001c8`6f4fc580 00000089`841ff8a0 000001c8`6f468790 : node!node::CallbackScope::~CallbackScope+0x1a2
+00000089`841ff710 00007ff7`32529ae0     : 000001c8`6f4f0101 000001c8`70ff3770 000001c8`70e91e00 000001c8`6f468790 : node!node::CallbackScope::~CallbackScope+0x6e
+00000089`841ff740 00007ff7`32528486     : 000001c8`6f42a280 000001c8`6f468790 000001c8`70ff69b0 000001c8`6f468790 : node!X509_STORE_get_cleanup+0x12d0
+00000089`841ff800 00007ff7`32528135     : 000001c8`70ff69b0 000001c8`70ff3770 000001c8`6f42a280 000001c8`6f4982f0 : node!node::TriggerNodeReport+0x14166
+00000089`841ff8a0 00007ff7`32669fd4     : 00000089`841ffa90 000001c8`70e91e00 000001c8`70ff3770 000001c8`70e7f770 : node!node::TriggerNodeReport+0x13e15
+00000089`841ff8e0 00007ff7`3254e6c2     : 000001c8`70e91e00 000001c8`6f4e8480 000001c8`70ff3770 00000089`841ffa90 : node!node::SpinEventLoop+0x1b4
+00000089`841ff990 00007ff7`325e7f6d     : 000001c8`6f4fa5a8 000001c8`70ff3770 000001c8`6f4982f0 000001c8`6f4386f0 : node!X509_STORE_get_cleanup+0x25eb2
+00000089`841ffae0 00007ff7`325e6c70     : 00000089`841ffc30 000001c8`6f429650 ffffffff`ffffffff 00000000`00000001 : node!node::Start+0x132d
+00000089`841ffc10 00007ff7`3239d7bc     : 000001c8`00000002 000001c8`6f484fd0 00000000`0005b990 00000000`000039c0 : node!node::Start+0x30
+00000089`841ffc50 00007ff7`338328ec     : 00007ff7`35ec0160 00000000`00000000 00000000`00000000 00000000`00000000 : node!AES_cbc_encrypt+0x24dec
+00000089`841ffe10 00007ff9`0b737374     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : node!inflateValidate+0x4afc
+00000089`841ffe50 00007ff9`0c77cc91     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : kernel32!BaseThreadInitThunk+0x14
+00000089`841ffe80 00000000`00000000     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!RtlUserThreadStart+0x21
+
+
+STACK_COMMAND:  ~0s; .ecxr ; kb
+
+FAULTING_SOURCE_LINE:  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xutility
+
+FAULTING_SOURCE_FILE:  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xutility
+
+FAULTING_SOURCE_LINE_NUMBER:  403
+
+FAULTING_SOURCE_CODE:  
+   399:         _STD construct_at(_STD addressof(_Obj), _STD forward<_Types>(_Args)...);
+   400:     } else
+   401: #endif // _HAS_CXX20
+   402:     {
+>  403:         ::new (static_cast<void*>(_STD addressof(_Obj))) _Ty(_STD forward<_Types>(_Args)...);
+   404:     }
+   405: }
+   406: 
+   407: template <class _Ty>
+   408: void _Default_construct_in_place(_Ty& _Obj) noexcept(is_nothrow_default_constructible_v<_Ty>) {
+
+
+SYMBOL_NAME:  anitomy_napi!std::_Construct_in_place<anitomy::Element,enum anitomy::ElementKind &,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,unsigned __int64 &>+71
+
+MODULE_NAME: anitomy_napi
+
+IMAGE_NAME:  anitomy_napi.node
+
+FAILURE_BUCKET_ID:  NULL_POINTER_WRITE_c0000005_anitomy_napi.node!std::_Construct_in_place_anitomy::Element,enum_anitomy::ElementKind__,std::basic_string_char,std::char_traits_char_,std::allocator_char___,unsigned___int64___
+
+OS_VERSION:  10.0.19041.1
+
+BUILDLAB_STR:  vb_release
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+FAILURE_ID_HASH:  {190cb5ff-fd73-8bf1-3696-6f174b0dd988}
+
+Followup:     MachineOwner
