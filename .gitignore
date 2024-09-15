@@ -1,0 +1,12 @@
+.git/
+.idea/
+.vscode/
+.vs/
+
+vcpkg/
+vcpkg_installed/
+node_modules/
+prebuilds/
+build/
+out/
+

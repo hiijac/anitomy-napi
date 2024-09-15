@@ -1,0 +1,29 @@
+{
+  "name": "@hiijac/anitomy-napi",
+  "version": "0.0.1",
+  "description": "Napi wrapper for erengy/anitomy",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "cmake-js build --target anitomy_napi --runtime electron --runtime-version 31.2.1 && npm run package",
+    "build-debug": "cmake-js build --target anitomy_napi --runtime electron --runtime-version 31.2.1 --debug && npm run package-debug",
+    "rebuild": "cmake-js rebuild --target anitomy_napi --runtime electron --runtime-version 31.2.1 && npm run package",
+    "rebuild-debug": "cmake-js rebuild --target anitomy_napi --runtime electron --runtime-version 31.2.1 --debug && npm run package-debug",
+    "install": "pkg-prebuilds-verify ./binding-options.js || echo \"Prebuild verification failed.\"",
+    "package": "pkg-prebuilds-copy --baseDir build/Release/ --source anitomy_napi.node --name=anitomy_napi --strip --runtime=node --napi_version=9 --arch=x64",
+    "package-debug": "pkg-prebuilds-copy --baseDir build/Debug/ --source anitomy_napi.node --name=anitomy_napi --strip --runtime=node --napi_version=9 --arch=x64"
+  },
+  "author": "Kamil Nowak <kn@hiijac.com>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@types/node": "^20.16.1",
+    "cmake-js": "^7.3.0",
+    "node-addon-api": "^8.1.0"
+  },
+  "dependencies": {
+    "pkg-prebuilds": "^1.0.0"
+  },
+  "volta": {
+    "node": "20.17.0"
+  }
+}
