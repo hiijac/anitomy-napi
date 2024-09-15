@@ -14,7 +14,7 @@
     "package-debug": "pkg-prebuilds-copy --baseDir build/Debug/ --source anitomy_napi.node --name=anitomy_napi --strip --runtime=node --napi_version=9 --arch=x64"
   },
   "author": "Kamil Nowak <kn@hiijac.com>",
-  "license": "GPL-3.0",
+  "license": "AGPL-3.0-or-later",
   "devDependencies": {
     "@types/node": "^20.16.1",
     "cmake-js": "^7.3.0",
